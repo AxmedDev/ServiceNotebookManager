@@ -10,7 +10,7 @@ namespace ServiceNotebook.BLL.Attributes
     public class AzOnlyLetterAttribute : RegularExpressionAttribute
     {
         public AzOnlyLetterAttribute()
-            : base(@"^[A-ZƏÇŞĞÜÖİ][a-zəçşğüöı]+$")
+        : base(@"^[A-ZƏÇŞĞÜÖİ][a-zəçşğüöı]+$")
         {
             ErrorMessage = "{0} yalnız hərflərdən ibarət olmalı və böyük hərflə başlamalıdır.";
         }

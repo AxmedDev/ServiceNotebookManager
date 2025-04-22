@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceNotebook.DAL", "Serv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceNotebook.API", "ServiceNotebook.API\ServiceNotebook.API.csproj", "{139ABB0A-F2E2-46E4-92F9-01D6911829CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceNotebook.BLL", "ServiceNotebook.BLL\ServiceNotebook.BLL.csproj", "{721BE2C5-8DA0-4B64-9415-62B5CF4E9DD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceNotebook.BLL", "ServiceNotebook.BLL\ServiceNotebook.BLL.csproj", "{721BE2C5-8DA0-4B64-9415-62B5CF4E9DD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
