@@ -28,12 +28,29 @@ namespace ServiceNotebook.BLL.Services
 
         public async Task <IEnumerable<EducationDTO>> GetEducationsWithEmployeeIdAsync(int EmployeeId)
         {
-            ;
+            
             List<Education> educations= await educationRepository.GetEducationsWithEmployeeIdAsync(EmployeeId);
 
             return educations.Select(e => mapper.Map<EducationDTO>(e)).ToList();
 
+        }
 
+        public async Task<bool> RemoveEducationAsync(int Id)
+        {
+            bool result = await educationRepository.DeleteAsync(Id);
+            return result;
+        }
+
+        public async Task<bool> UpdateEducationAsync(EducationUpdateDTO educationUpdateDTO)
+        {
+             bool result= await educationRepository.UpdateAsync(mapper.Map<Education>(educationUpdateDTO));
+            return result;
+        }
+
+        public async Task<IEnumerable<EducationDTO>> GetEducationsAsync()
+        {
+            List<Education> educations= await educationRepository.GetAllAsync();
+            return educations.Select(e => mapper.Map<EducationDTO>(e)).ToList();
         }
     }
 }

@@ -41,6 +41,23 @@ namespace ServiceNotebook.BLL.Services
            await employeeRepository.AddAsync(mapper.Map<EmployeeNotebook>(employeeNotebookCreateDTO));
         }
     
+        public async Task<bool> RemoveEmployeeAsync(int Id)
+        {
+            bool result= await employeeRepository.DeleteAsync(Id);
+            return result;
+        }
+
+        public async Task<bool> UpdateEmployeeAsync(EmployeeNotebookUpdateDTO employeeNotebookUpdateDTO)
+        {
+            bool result= await employeeRepository.UpdateAsync(mapper.Map<EmployeeNotebook>(employeeNotebookUpdateDTO));
+            return result;
+        }
+
+        public async Task<EmployeeNotebookDTO> GetEmployeeByIdAsync(int Id)
+        {
+            EmployeeNotebook? employee= await employeeRepository.GetByIdAsync(Id);
+            return mapper.Map<EmployeeNotebookDTO>(employee);
+        }
 
 
     }

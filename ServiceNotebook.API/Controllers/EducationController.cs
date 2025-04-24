@@ -16,7 +16,7 @@ namespace ServiceNotebook.API.Controllers
             this.service = service;
         }
 
-        [HttpPost]
+        [HttpPost("Insert Education")]
         public async Task<IActionResult> InsertEducationAsync([FromForm]EducationCreateDTO educationCreateDTO)
         {
             await service.InsertEducationAsync(educationCreateDTO);
@@ -29,6 +29,30 @@ namespace ServiceNotebook.API.Controllers
             return await service.GetEducationsWithEmployeeIdAsync(EmployeeId);
         }
 
-       
+
+        [HttpDelete("Remove Employee")]
+        public async Task<IActionResult> RemoveEducationAsync(int Id)
+        {
+            bool result = await service.RemoveEducationAsync(Id);
+            if (result) return Ok();
+            return BadRequest();
+        }
+
+        [HttpPatch("Update Education")]
+        public async Task<IActionResult> UpdateEducationAsync([FromForm]EducationUpdateDTO educationUpdateDTO)
+        {
+          bool result= await  service.UpdateEducationAsync (educationUpdateDTO);
+            if (result) return Ok();
+                return BadRequest();
+        }
+
+        [HttpGet ("Get Educations")]
+        public async Task<IActionResult> GetEducationAsync()
+        {
+            var educations= await service.GetEducationsAsync();
+            return Ok(educations);
+
+        }
+
     }
 }

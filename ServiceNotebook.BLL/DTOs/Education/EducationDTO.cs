@@ -12,6 +12,7 @@ namespace ServiceNotebook.BLL.DTOs.Education
 {
     public class EducationDTO
     {
+        public int Id { get; set; }
         public string EducationLevel { get; set; }
         public string InstitutionName { get; set; }
         public string Faculty { get; set; }
@@ -19,7 +20,6 @@ namespace ServiceNotebook.BLL.DTOs.Education
         public DateTime EndDate { get; set; }
         public string DiplomaNumber { get; set; }
         public DateTime DiplomaDate { get; set; }
-
         public EmployeeNotebookDTO Employee { get; set; }
 
 

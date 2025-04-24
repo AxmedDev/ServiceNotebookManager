@@ -9,5 +9,6 @@ namespace ServiceNotebook.Core.Repositories
 {
     public  interface IAddressRepository :IGeneralRepository<Address>
     {
+        Task<List<Address>> GetAddressesWithEmployeeIdAsync(int EmployeeId);
     }
 }

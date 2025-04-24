@@ -11,19 +11,13 @@ using ServiceNotebook.Core.Entities;
 
 namespace ServiceNotebook.BLL.AutoMapper
 {
-    public  class MappingProfile : Profile
+    public  class EmployeeNotebookMappingProfile : Profile
     {
-        public MappingProfile()
+        public EmployeeNotebookMappingProfile()
         {
             CreateMap<EmployeeNotebook, EmployeeNotebookDTO>().ReverseMap();
             CreateMap<EmployeeNotebook, EmployeeNotebookCreateDTO>().ReverseMap();
-            CreateMap<Education,EducationCreateDTO>().ReverseMap();
-            CreateMap<Education, EducationDTO>().ReverseMap();
-
-            CreateMap<Education, EducationDTO>()
-            .ForMember(dest => dest.Employee, opt => opt.MapFrom(src => src.EmployeeNotebook)) // Burada çevirmə aparılır
-            .ReverseMap();
-
+            CreateMap<EmployeeNotebookUpdateDTO, EmployeeNotebook>();
         }
 
     }

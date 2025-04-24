@@ -8,5 +8,7 @@ namespace ServiceNotebook.Core.Enums
 {
     public enum GenderType
     {
+        Man=1,
+        Woman=0
     }
 }

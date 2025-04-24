@@ -10,6 +10,7 @@ using ServiceNotebook.BLL.Services;
 using ServiceNotebook.Core.Repositories;
 using ServiceNotebook.DAL.MyDbContext;
 using ServiceNotebook.DAL.Repositories;
+using ServiceNotebook.DAL.Repositories.Log;
 
 namespace ServiceNotebook.BLL.ServiceRegistration
 {
@@ -24,7 +25,9 @@ namespace ServiceNotebook.BLL.ServiceRegistration
             services.AddScoped<EmployeeNotebookServices>();
             services.AddScoped<EducationService>();
             services.AddScoped<IEducationRepository,EducationRepository>();
-
+            services.AddScoped<IAddressRepository,AddressRepository> ();
+            services.AddScoped<AddressService>();
+            services.AddScoped<AuditLogRepository>();
             
 
         }

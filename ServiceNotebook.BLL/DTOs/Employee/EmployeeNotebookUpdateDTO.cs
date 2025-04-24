@@ -8,8 +8,10 @@ using ServiceNotebook.BLL.Attributes;
 
 namespace ServiceNotebook.BLL.DTOs.Employee
 {
-    public class EmployeeNotebookCreateDTO
+    public class EmployeeNotebookUpdateDTO
     {
+        public int Id { get; set; }
+
         [Required]
         [AzOnlyLetter]
         public string Name { get; set; }
@@ -38,15 +40,14 @@ namespace ServiceNotebook.BLL.DTOs.Employee
         public bool IsMarried { get; set; }
 
         [Required]
-        [Phone(ErrorMessage = "MainPhoneNumber düzgün formatda deyil.")]
         [AzPhoneNumber]
         public string MainPhoneNumber { get; set; }
 
-       
         [AzPhoneNumber]
         public string OtherPhoneNumber { get; set; } = null;
 
         [EmailAddress(ErrorMessage = "Email düzgün formatda deyil.")]
         public string Email { get; set; } = null;
+
     }
 }

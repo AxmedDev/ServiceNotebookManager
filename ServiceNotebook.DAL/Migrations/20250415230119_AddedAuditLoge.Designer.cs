@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ServiceNotebook.DAL.MyDbContext;
 
@@ -11,9 +12,11 @@ using ServiceNotebook.DAL.MyDbContext;
 namespace ServiceNotebook.DAL.Migrations
 {
     [DbContext(typeof(ServiceNotebookDB))]
-    partial class ServiceNotebookDBModelSnapshot : ModelSnapshot
+    [Migration("20250415230119_AddedAuditLoge")]
+    partial class AddedAuditLoge
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
