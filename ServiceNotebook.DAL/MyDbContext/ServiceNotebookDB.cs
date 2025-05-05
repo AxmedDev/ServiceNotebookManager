@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ServiceNotebook.Core.Entities;
 using ServiceNotebook.Core.Entities.Log;
+using ServiceNotebook.Core.Entities.Register;
 
 namespace ServiceNotebook.DAL.MyDbContext
 {
@@ -24,7 +25,7 @@ namespace ServiceNotebook.DAL.MyDbContext
         public DbSet<Order> Orders {  get; set; }
         public DbSet<SkillDegree> SkillDegrees { get; set; }
         public DbSet<WorkExperience> WorkExperiences { get; set; }
-
+        public DbSet<User> Users { get; set; }
         public DbSet<AuditLog> AuditLogs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -38,7 +39,8 @@ namespace ServiceNotebook.DAL.MyDbContext
             modelBuilder.Entity<Education>().HasIndex(x => x.DiplomaNumber).IsUnique();
             modelBuilder.Entity<EmployeeNotebook>().HasIndex(x=>x.MainPhoneNumber).IsUnique();
             modelBuilder.Entity<IdentificationDocument>().HasIndex(x=>x.DocumentNumber).IsUnique();
-            modelBuilder.Entity<Order>().HasIndex(x=> x.OrderNumber).IsUnique();    
+            modelBuilder.Entity<Order>().HasIndex(x=> x.OrderNumber).IsUnique();
+            modelBuilder.Entity<User>().HasIndex(x=>x.UserName).IsUnique();
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

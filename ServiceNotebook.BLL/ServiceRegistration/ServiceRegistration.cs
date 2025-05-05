@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.SqlServer.Update.Internal;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using ServiceNotebook.BLL.Services;
+using ServiceNotebook.BLL.Services.TokenService;
 using ServiceNotebook.Core.Repositories;
 using ServiceNotebook.DAL.MyDbContext;
 using ServiceNotebook.DAL.Repositories;
@@ -28,8 +30,11 @@ namespace ServiceNotebook.BLL.ServiceRegistration
             services.AddScoped<IAddressRepository,AddressRepository> ();
             services.AddScoped<AddressService>();
             services.AddScoped<AuditLogRepository>();
-            
-
+            services.AddScoped<IFamilyMemberRepository,FamilyMemberRepository>();
+            services.AddScoped<FamilyMemberService>();
+            services.AddScoped<TokenService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<UserService>();
         }
     }
 }

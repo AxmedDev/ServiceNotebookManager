@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 using AutoMapper;
 using ServiceNotebook.BLL.DTOs.FamilyMember;
 using ServiceNotebook.Core.Entities;
+using ServiceNotebook.Core.Repositories;
 using ServiceNotebook.DAL.Repositories;
 
 namespace ServiceNotebook.BLL.Services
 {
     public  class FamilyMemberService
     {
-        private readonly FamilyMemberRepository familyMemberRepository;
+        private readonly IFamilyMemberRepository familyMemberRepository;
         private IMapper mapper;
 
-        public FamilyMemberService(FamilyMemberRepository familyMemberRepository, IMapper mapper)
+        public FamilyMemberService(IFamilyMemberRepository familyMemberRepository, IMapper mapper)
         {
             this.familyMemberRepository = familyMemberRepository;
             this.mapper = mapper;
@@ -23,7 +24,13 @@ namespace ServiceNotebook.BLL.Services
 
         public async Task<List<FamilyMemberDTO>> GetFamilyMemberAsync()
         {
-           throw new NotImplementedException();
+            return  mapper.Map<List<FamilyMemberDTO>>(await familyMemberRepository.GetAllAsync());
+        }
+
+
+        public async Task InsertFamilyMemberAsync(FamilyMemberCreateDTO familMemberCreateDTO)
+        {
+            await familyMemberRepository.AddAsync(mapper.Map<FamilyMember>(familMemberCreateDTO));
         }
     }
 }

@@ -1,7 +1,9 @@
 
 using System.Reflection;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using ServiceNotebook.API.Middlewares;
+using ServiceNotebook.API.ServiceRegistration;
 using ServiceNotebook.BLL.ServiceRegistration;
 
 namespace ServiceNotebook.API
@@ -23,7 +25,8 @@ namespace ServiceNotebook.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddBusinessLayer();
-
+            builder.RegistrJWT();
+           
             builder.Host.UseSerilog();
             var app = builder.Build();
 
@@ -38,6 +41,7 @@ namespace ServiceNotebook.API
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+            app.UseAuthentication();
   
 
             app.MapControllers();
