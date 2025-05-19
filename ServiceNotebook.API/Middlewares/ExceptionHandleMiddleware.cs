@@ -39,7 +39,7 @@
 
 
                 logger.LogError(ex,
-                    "❌ Error occurred!\nTimestamp: {Timestamp}\nUser: {User}\nController: {Controller}\nAction: {Action}\nMethod: {Method}\nPath: {Path}",
+                    " Error occurred!\nTimestamp: {Timestamp}\nUser: {User}\nController: {Controller}\nAction: {Action}\nMethod: {Method}\nPath: {Path}",
                     timestamp, user, controller, action, method, path);
 
                 context.Response.StatusCode = 500;
