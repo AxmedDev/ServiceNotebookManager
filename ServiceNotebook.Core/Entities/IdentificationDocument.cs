@@ -13,11 +13,11 @@ namespace ServiceNotebook.Core.Entities
     public class IdentificationDocument : BaseEntity
     {
      
-        public string DocumentNumber { get; set; } // Şəxsiyyət vəsiqəsinin/Pasportun nömrəsi
-        public IdentificationType DocumentType { get; set; } // Sənədin növü (şəxsiyyət vəsiqəsi, xarici pasport və s.)
-        public DateTime IssueDate { get; set; } // Verilmə tarixi
-        public DateTime ExpiryDate { get; set; } // Etibarlılıq müddəti
-        public string IssuingAuthority { get; set; } // Verən qurum (Məsələn: DİN, Sərhəd Xidməti və s.)
+        public string DocumentNumber { get; set; } 
+        public IdentificationType DocumentType { get; set; } 
+        public DateTime IssueDate { get; set; } 
+        public DateTime ExpiryDate { get; set; }
+        public string IssuingAuthority { get; set; } 
         public BloodType BloodType { get; set; } 
         public int EmployeeNotebookId { get; set; }
         public EmployeeNotebook EmployeeNotebook { get; set; }

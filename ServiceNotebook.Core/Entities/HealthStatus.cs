@@ -10,10 +10,10 @@ namespace ServiceNotebook.Core.Entities
 {
     public class HealthStatus : BaseEntity
     {
-        public string MedicalInstitution { get; set; } // Tibb müəssisəsinin adı
-        public DateTime ExaminationDate { get; set; } // Müayinə tarixi
-        public string Diagnosis { get; set; } // Diaqnoz
-        public ServiceSuitabilityType ServiceSuitability { get; set; } // Hərbi xidmətə yararlılıq (A, B, C, Ç, D)
+        public string MedicalInstitution { get; set; } 
+        public DateTime ExaminationDate { get; set; }
+        public string Diagnosis { get; set; } 
+        public ServiceSuitabilityType ServiceSuitability { get; set; } 
         public int EmployeeNotebookId { get; set; }
         public EmployeeNotebook EmployeeNotebook { get; set; }
     }

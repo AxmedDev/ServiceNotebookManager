@@ -12,7 +12,6 @@ namespace ServiceNotebook.BLL.DTOs.Address
     {
         
         public string Street { get; set; }
-
         [Required]
         [AzOnlyLetter]
         public string City { get; set; }

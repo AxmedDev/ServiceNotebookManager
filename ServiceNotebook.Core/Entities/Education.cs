@@ -9,13 +9,13 @@ namespace ServiceNotebook.Core.Entities
 {
     public class Education : BaseEntity
     {
-        public string EducationLevel { get; set; } // Təhsil pilləsi (orta, ali, bakalavr, magistr və s.)
-        public string InstitutionName { get; set; } // Təhsil müəssisəsinin adı
-        public string Faculty { get; set; } // Fakültə 
-        public DateTime StartDate { get; set; } // Təhsilə başlama tarixi
-        public DateTime EndDate { get; set; } // Təhsili bitirmə tarixi
-        public string DiplomaNumber { get; set; } // Diplomun nömrəsi
-        public DateTime DiplomaDate { get; set; }  // Diplomun verilmə tarixi
+        public string EducationLevel { get; set; } 
+        public string InstitutionName { get; set; } 
+        public string Faculty { get; set; } 
+        public DateTime StartDate { get; set; } 
+        public DateTime EndDate { get; set; } 
+        public string DiplomaNumber { get; set; }
+        public DateTime DiplomaDate { get; set; }  
         public int EmployeeNotebookId { get; set; }
         public EmployeeNotebook EmployeeNotebook { get; set; }
     }

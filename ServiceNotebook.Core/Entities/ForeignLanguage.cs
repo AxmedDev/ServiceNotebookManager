@@ -10,7 +10,7 @@ namespace ServiceNotebook.Core.Entities
     public class ForeignLanguage : BaseEntity
     {
         public string Language { get; set; }
-        public string ProficiencyLevel { get; set; } // Bilik səviyyəsi (zəif, yaxşı, sərbəst)
+        public string ProficiencyLevel { get; set; } 
         public int EmployeeNotebookId { get; set; }
         public EmployeeNotebook EmployeeNotebook { get; set; }
     }

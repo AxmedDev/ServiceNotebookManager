@@ -12,7 +12,7 @@ namespace ServiceNotebook.API.ServiceRegistration
             {
                 c.SwaggerDoc("v1", new() { Title = "LearnJWT API", Version = "v1" });
 
-                // ?? JWT authentication üçün schema ?lav? olunur
+               
                 c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -23,7 +23,7 @@ namespace ServiceNotebook.API.ServiceRegistration
                     Description = "JWT token-i daxil edin. Format: Bearer {token}"
                 });
 
-                // ?? Bütün ?m?liyyatlara JWT t?l?bi ?lav? olunur (?g?r [Authorize] varsa)
+                
                 c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
                 {
                    {

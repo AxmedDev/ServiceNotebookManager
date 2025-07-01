@@ -15,7 +15,6 @@ namespace ServiceNotebook.DAL.Repositories
         public AddressRepository(ServiceNotebookDB dbContext) : base(dbContext)
         {
         }
-
         public async Task<List<Address>> GetAddressesWithEmployeeIdAsync(int EmployeeId)
         {
             return await dbSet.Include(x=>x.EmployeeNotebook).Where(x=>x.EmployeeNotebookId== EmployeeId).ToListAsync();

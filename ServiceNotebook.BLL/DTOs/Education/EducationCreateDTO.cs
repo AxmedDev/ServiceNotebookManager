@@ -9,19 +9,19 @@ namespace ServiceNotebook.BLL.DTOs.Education
 {
     public  class EducationCreateDTO
     {
-        public string EducationLevel { get; set; } // Təhsil pilləsi (orta, ali, bakalavr, magistr və s.)
-        public string InstitutionName { get; set; } // Təhsil müəssisəsinin adı
-        public string Faculty { get; set; } // Fakültə 
+        public string EducationLevel { get; set; } 
+        public string InstitutionName { get; set; } 
+        public string Faculty { get; set; }  
         
         [DataType(DataType.Date)]
-        public DateTime StartDate { get; set; } // Təhsilə başlama tarixi
+        public DateTime StartDate { get; set; } 
 
         [DataType(DataType.Date)]
-        public DateTime EndDate { get; set; } // Təhsili bitirmə tarixi
-        public string DiplomaNumber { get; set; } // Diplomun nömrəsi
+        public DateTime EndDate { get; set; } 
+        public string DiplomaNumber { get; set; }
         
         [DataType(DataType.Date)]
-        public DateTime DiplomaDate { get; set; }  // Diplomun verilmə tarixi
+        public DateTime DiplomaDate { get; set; }  
         public int EmployeeNotebookId { get; set; }
     }
 }
